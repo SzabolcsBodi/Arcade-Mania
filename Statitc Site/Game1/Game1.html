@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Game_1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Repülős lövölde</title>
+</head>
+<body>
+    <ul>
+        <li><a href="http://localhost/ArcadeMania/menu/main.php">Home</a></li>
+        <li style="float:right"><a href="?logout=true">Log Out</a></li>
+        <li style="float:right"><a href=""></a></li>
+    </ul>
+ <!-- Score and High Score Section -->
+    <div id="score-container">
+        <h1 id="score" class="jelenlegiEredmeny">Score: 0</h1>
+    </div>
+    <div id="high-score-container">
+        <h1 id="high-score" class="maxEredmeny">High Score: 0</h1>
+    </div>
+    <!-- Loss message (hidden by default) -->
+    <div id="loss-message" style="display:none; text-align:center; font-size:2em; color:white; margin-bottom:10px;">
+        You lost!
+        <br><br>
+        Press Space to play again.
+    </div>
+    
+
+    <div class="jatekter"></div>
+
+    <!-- <div class="gombok">
+        <h1>A játok újraindításához nyomd meg: Space</h1>
+    </div>
+     -->
+    <script src="Game_1.js"></script>
+
+</body>
+</html>
