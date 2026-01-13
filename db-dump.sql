@@ -21,9 +21,11 @@ USE arcade_mania_datas;
 CREATE TABLE IF NOT EXISTS users (
     id            CHAR(36)       NOT NULL,     -- GUID (C# Guid)
     user_name     VARCHAR(100)   NOT NULL,
-    password_hash CHAR(60)       NOT NULL,     -- hash-elt jelszó (pl. bcrypt)
+    password_hash CHAR(255)      NOT NULL,     -- Visszafejthető titkosított jelszó (pl. AES titkosított szöveg)
+    role          VARCHAR(20)    NOT NULL DEFAULT 'User', -- 'User' vagy 'Admin'
     PRIMARY KEY (id),
-    UNIQUE KEY uq_users_user_name (user_name)
+    UNIQUE KEY uq_users_user_name (user_name),
+    KEY idx_users_role (role)
 );
 
 -- ------------------------------------------------------
@@ -50,7 +52,7 @@ CREATE TABLE IF NOT EXISTS user_high_scores (
     CONSTRAINT fk_user_high_scores_game
         FOREIGN KEY (game_id) REFERENCES games(id)
         ON DELETE CASCADE
-        ON UPDATE CASCADE
+        ON ON UPDATE CASCADE
 );
 
 -- ------------------------------------------------------
@@ -65,11 +67,12 @@ CREATE TABLE IF NOT EXISTS user_high_scores (
 -- ('dd4c8740-d2a4-11f0-906c-fc5cee8cf808', 'Snake');
 
 -- Felhasználók
--- FONTOS: password_hash mezőbe már hash-elt jelszó kerüljön!
--- INSERT INTO users (id, user_name, password_hash)
+-- FONTOS: password_hash mezőbe a TE rendszered szerint titkosított (AES) érték kerüljön!
+-- role alapból 'User', adminhoz add meg: 'Admin'
+-- INSERT INTO users (id, user_name, password_hash, role)
 -- VALUES
--- (UUID(), 'Player1', '<bcrypt_hash>'),
--- (UUID(), 'Player2', '<bcrypt_hash>');
+-- (UUID(), 'Player1', '<aes_encrypted_password>', 'User'),
+-- (UUID(), 'Admin1',  '<aes_encrypted_password>', 'Admin');
 
 -- High score-ok
 -- INSERT INTO user_high_scores (user_id, game_id, high_score)
