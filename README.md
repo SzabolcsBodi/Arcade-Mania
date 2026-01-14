@@ -66,9 +66,6 @@ A backend az alkalmazás üzleti logikájáért felel, és REST API végpontokon
 - Játékpontszámok frissítése (külön végpontokon)
 
 ---
-A file-ok méretei miatt a teljes backend erről a Google Drive linkről érhető el: 
-https://drive.google.com/drive/folders/1ELclSF3VIrg245dCflzeX8XJQPa2AmfN?usp=drive_link
----
 
 ## Hivatkozások:
 
@@ -79,3 +76,6 @@ https://trello.com/b/ZOUXv58n/ikt-projektmunka
 ## GitHub link:
 
 https://github.com/SzabolcsBodi/Arcade-Mania
+
+## A file-ok méretei miatt a teljes backend erről a Google Drive linkről érhető el: 
+https://drive.google.com/drive/folders/1ELclSF3VIrg245dCflzeX8XJQPa2AmfN?usp=drive_link
