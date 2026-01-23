@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS user_high_scores (
     CONSTRAINT fk_user_high_scores_game
         FOREIGN KEY (game_id) REFERENCES games(id)
         ON DELETE CASCADE
-        ON ON UPDATE CASCADE
+        ON UPDATE CASCADE
 );
 
 -- ------------------------------------------------------
@@ -78,3 +78,4 @@ CREATE TABLE IF NOT EXISTS user_high_scores (
 -- INSERT INTO user_high_scores (user_id, game_id, high_score)
 -- VALUES
 -- ('<Player1_GUID>', '<Snake_GUID>', 1200);
+
