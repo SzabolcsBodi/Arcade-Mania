@@ -79,3 +79,7 @@ CREATE TABLE IF NOT EXISTS user_high_scores (
 -- VALUES
 -- ('<Player1_GUID>', '<Snake_GUID>', 1200);
 
+-- Role frissítése
+-- UPDATE users
+-- SET role = "Admin"
+-- WHERE user_name = "User1";
